@@ -8,4 +8,14 @@
       </div>
     </div>
   </body>
+  <script>
+    let counter = 0;
+    const h3 = document.querySelector("h3");
+    const button = document.getElementById("btn");
+    const handleClick = () => {
+      counter = counter + 1;
+      h3.innerText = `clicked: ${counter}`;
+    };
+    button.addEventListener("click", handleClick);
+  </script>
 </html>

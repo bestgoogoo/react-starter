@@ -7,13 +7,19 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
+    let counter = 0;
+    const countUp = () => {
+      counter + 1;
+      render();
+    };
+    const render = () => ReactDOM.render(<Container />, root);
     const Container = () => (
       <div>
-        <h3>clicked: 0</h3>
-        <button>Click</button>
+        <h3>clicked: {counter}</h3>
+        <button onClick={countUp}>Click</button>
       </div>
     );
     const root = document.getElementById("root");
-    ReactDOM.render(<Container />, root);
+    render();
   </script>
 </html>
