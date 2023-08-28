@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <body id="container">
-    <div>
-      <h3>clicked: 0</h3>
-      <button id="btn" style="background-color: tomato">Click</button>
+  <body>
+    <div id="root">
+      <div>
+        <h3>clicked: 0</h3>
+        <button id="btn" style="background-color: tomato">Click</button>
+      </div>
     </div>
   </body>
-  <script>
-    const h3 = document.querySelector("h3");
-    const button = document.getElementById("btn");
-    const handleClick = (click) => console.log("hello");
-    button.addEventListener("click", handleClick);
-  </script>
 </html>
