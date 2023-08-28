@@ -7,19 +7,25 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    let counter = 0;
-    const countUp = () => {
-      counter = counter + 1;
-      render();
-    };
-    const render = () => ReactDOM.render(<Container />, root);
-    const Container = () => (
-      <div>
-        <h3>clicked: {counter}</h3>
-        <button onClick={countUp}>Click</button>
-      </div>
-    );
+    function App() {
+      const [counter, setCounter] = React.useState(0);
+      // The upper code is shortcut of under 3 lines codes
+      // const data = React.useState(0);
+      // const counter = data[0];
+      // const setCounter = data[1];
+      const onClick = () => {
+        setCounter((current) => current + 1);
+        // The upper code is more safe way than under line code
+        // setCounter(counter + 1);
+      };
+      return (
+        <div>
+          <h3>clicked: {counter}</h3>
+          <button onClick={onClick}>Click</button>
+        </div>
+      );
+    }
     const root = document.getElementById("root");
-    render();
+    ReactDOM.render(<App />, root);
   </script>
 </html>
